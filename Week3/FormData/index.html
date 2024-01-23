@@ -1,0 +1,29 @@
+<form id="formElem">
+    <input type="text" name="name" value="John">
+    <input type="text" name="surname" value="Smith">
+    <input type="submit">
+  </form>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const formElem = document.getElementById('formElem');
+  
+      formElem.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        const formData = new FormData(formElem);
+        formData.append('currentDate', new Date().toISOString()); // Append current date
+  
+        // Output form data to console
+        formData.forEach((value, key) => {
+          console.log(`${key}: ${value}`);
+        });
+  
+        // For demonstration purposes, simulate a fetch request with a timeout
+        setTimeout(() => {
+          alert('Form data submitted successfully!');
+        }, 1000);
+      });
+    });
+  </script>
+  
