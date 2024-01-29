@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0404;
+    animation: myanima 2s infinite alternate;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+}
+
+@keyframes myanima {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(200px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(500px) rotate(360deg);
+    }
+}
